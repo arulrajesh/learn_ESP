@@ -1,0 +1,540 @@
+Processing debug (platform: espressif32; board: lolin_s3_mini; framework: arduino)
+--------------------------------------------------------------------------------
+--- Terminal on COM24 | 115200 8-N-1
+--- Available filters and text transformations: colorize, debug, default, direct, esp32_exception_decoder, hexlify, log2file, nocontrol, printable, send_on_enter, time
+--- More details at https://bit.ly/pio-monitor-filters
+--- Quit: Ctrl+C | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+
+=== PERFORMANCE BENCHMARK ===
+📊 Build Information:
+   Mode: DEBUG
+   Optimizations: Minimal (-Og)
+   CPU Frequency: 240 MHz
+   Free Heap: 290564 bytes
+🧮 Math Performance Test
+   Result: 21081768.00
+   Time: 654822 microseconds
+   ⚠️  DEBUG mode - slower performance
+🔄 Loop Performance Test
+   Counter: 999999
+   Time: 50346 microseconds
+💾 Memory Access Test
+   Sum: 100000000
+   Time: 555 microseconds
+=============================
+
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+📊 Main: Debug mode - extra logging enabled
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+
+=== PERFORMANCE BENCHMARK ===
+📊 Build Information:
+   Mode: DEBUG
+   Optimizations: Minimal (-Og)
+   CPU Frequency: 240 MHz
+   Free Heap: 290564 bytes
+🧮 Math Performance Test
+   Result: 21081768.00
+   Time: 654771 microseconds
+   ⚠️  DEBUG mode - slower performance
+🔄 Loop Performance Test
+   Counter: 999999
+   Time: 50336 microseconds
+💾 Memory Access Test
+   Sum: 100000000
+   Time: 556 microseconds
+=============================
+
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+
+=== PERFORMANCE BENCHMARK ===
+📊 Build Information:
+   Mode: DEBUG
+   Optimizations: Minimal (-Og)
+   CPU Frequency: 240 MHz
+   Free Heap: 290564 bytes
+🧮 Math Performance Test
+   Result: 21081768.00
+   Time: 654814 microseconds
+   ⚠️  DEBUG mode - slower performance
+🔄 Loop Performance Test
+   Counter: 999999
+   Time: 50346 microseconds
+💾 Memory Access Test
+   Sum: 100000000
+   Time: 551 microseconds
+=============================
+
+📊 Main: Debug mode - extra logging enabled
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+
+=== PERFORMANCE BENCHMARK ===
+📊 Build Information:
+   Mode: DEBUG
+   Optimizations: Minimal (-Og)
+   CPU Frequency: 240 MHz
+   Free Heap: 290564 bytes
+🧮 Math Performance Test
+   Result: 21081768.00
+   Time: 654794 microseconds
+   ⚠️  DEBUG mode - slower performance
+🔄 Loop Performance Test
+   Counter: 999999
+   Time: 50335 microseconds
+💾 Memory Access Test
+   Sum: 100000000
+   Time: 556 microseconds
+=============================
+
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+📊 Main: Debug mode - extra logging enabled
+
+=== PERFORMANCE BENCHMARK ===
+📊 Build Information:
+   Mode: DEBUG
+   Optimizations: Minimal (-Og)
+   CPU Frequency: 240 MHz
+   Free Heap: 290564 bytes
+🧮 Math Performance Test
+   Result: 21081768.00
+   Time: 654748 microseconds
+   ⚠️  DEBUG mode - slower performance
+🔄 Loop Performance Test
+   Counter: 999999
+   Time: 50348 microseconds
+💾 Memory Access Test
+   Sum: 100000000
+   Time: 551 microseconds
+=============================
+
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+
+=== PERFORMANCE BENCHMARK ===
+📊 Build Information:
+   Mode: DEBUG
+   Optimizations: Minimal (-Og)
+   CPU Frequency: 240 MHz
+   Free Heap: 290564 bytes
+🧮 Math Performance Test
+   Result: 21081768.00
+   Time: 654731 microseconds
+   ⚠️  DEBUG mode - slower performance
+🔄 Loop Performance Test
+   Counter: 999999
+   Time: 50342 microseconds
+💾 Memory Access Test
+   Sum: 100000000
+   Time: 555 microseconds
+=============================
+
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+📊 Main: Debug mode - extra logging enabled
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+
+=== PERFORMANCE BENCHMARK ===
+📊 Build Information:
+   Mode: DEBUG
+   Optimizations: Minimal (-Og)
+   CPU Frequency: 240 MHz
+   Free Heap: 290564 bytes
+🧮 Math Performance Test
+   Result: 21081768.00
+   Time: 654783 microseconds
+   ⚠️  DEBUG mode - slower performance
+🔄 Loop Performance Test
+   Counter: 999999
+   Time: 50346 microseconds
+💾 Memory Access Test
+   Sum: 100000000
+   Time: 558 microseconds
+=============================
+
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+
+=== PERFORMANCE BENCHMARK ===
+📊 Build Information:
+   Mode: DEBUG
+   Optimizations: Minimal (-Og)
+   CPU Frequency: 240 MHz
+   Free Heap: 290564 bytes
+🧮 Math Performance Test
+   Result: 21081768.00
+   Time: 654756 microseconds
+   ⚠️  DEBUG mode - slower performance
+🔄 Loop Performance Test
+   Counter: 999999
+   Time: 50346 microseconds
+💾 Memory Access Test
+   Sum: 100000000
+   Time: 555 microseconds
+=============================
+
+📊 Main: Debug mode - extra logging enabled
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+
+=== PERFORMANCE BENCHMARK ===
+📊 Build Information:
+   Mode: DEBUG
+   Optimizations: Minimal (-Og)
+   CPU Frequency: 240 MHz
+   Free Heap: 290564 bytes
+🧮 Math Performance Test
+   Result: 21081768.00
+   Time: 654816 microseconds
+   ⚠️  DEBUG mode - slower performance
+🔄 Loop Performance Test
+   Counter: 999999
+   Time: 50346 microseconds
+💾 Memory Access Test
+   Sum: 100000000
+   Time: 552 microseconds
+=============================
+
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+📊 Main: Debug mode - extra logging enabled
+
+=== PERFORMANCE BENCHMARK ===
+📊 Build Information:
+   Mode: DEBUG
+   Optimizations: Minimal (-Og)
+   CPU Frequency: 240 MHz
+   Free Heap: 290564 bytes
+🧮 Math Performance Test
+   Result: 21081768.00
+   Time: 654802 microseconds
+   ⚠️  DEBUG mode - slower performance
+🔄 Loop Performance Test
+   Counter: 999999
+   Time: 50346 microseconds
+💾 Memory Access Test
+   Sum: 100000000
+   Time: 555 microseconds
+=============================
+
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+
+=== PERFORMANCE BENCHMARK ===
+📊 Build Information:
+   Mode: DEBUG
+   Optimizations: Minimal (-Og)
+   CPU Frequency: 240 MHz
+   Free Heap: 290564 bytes
+🧮 Math Performance Test
+   Result: 21081768.00
+   Time: 654768 microseconds
+   ⚠️  DEBUG mode - slower performance
+🔄 Loop Performance Test
+   Counter: 999999
+   Time: 50351 microseconds
+💾 Memory Access Test
+   Sum: 100000000
+   Time: 551 microseconds
+=============================
+
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+📊 Main: Debug mode - extra logging enabled
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+
+=== PERFORMANCE BENCHMARK ===
+📊 Build Information:
+   Mode: DEBUG
+   Optimizations: Minimal (-Og)
+   CPU Frequency: 240 MHz
+   Free Heap: 290564 bytes
+🧮 Math Performance Test
+   Result: 21081768.00
+   Time: 654823 microseconds
+   ⚠️  DEBUG mode - slower performance
+🔄 Loop Performance Test
+   Counter: 999999
+   Time: 50342 microseconds
+💾 Memory Access Test
+   Sum: 100000000
+   Time: 556 microseconds
+=============================
+
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+
+=== PERFORMANCE BENCHMARK ===
+📊 Build Information:
+   Mode: DEBUG
+   Optimizations: Minimal (-Og)
+   CPU Frequency: 240 MHz
+   Free Heap: 290564 bytes
+🧮 Math Performance Test
+   Result: 21081768.00
+   Time: 654806 microseconds
+   ⚠️  DEBUG mode - slower performance
+🔄 Loop Performance Test
+   Counter: 999999
+   Time: 50346 microseconds
+💾 Memory Access Test
+   Sum: 100000000
+   Time: 553 microseconds
+=============================
+
+📊 Main: Debug mode - extra logging enabled
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+
+=== PERFORMANCE BENCHMARK ===
+📊 Build Information:
+   Mode: DEBUG
+   Optimizations: Minimal (-Og)
+   CPU Frequency: 240 MHz
+   Free Heap: 290564 bytes
+🧮 Math Performance Test
+   Result: 21081768.00
+   Time: 654817 microseconds
+   ⚠️  DEBUG mode - slower performance
+🔄 Loop Performance Test
+   Counter: 999999
+   Time: 50336 microseconds
+💾 Memory Access Test
+   Sum: 100000000
+   Time: 561 microseconds
+=============================
+
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+
+=== PERFORMANCE BENCHMARK ===
+📊 Build Information:
+   Mode: DEBUG
+   Optimizations: Minimal (-Og)
+   CPU Frequency: 240 MHz
+   Free Heap: 290564 bytes
+🧮 Math Performance Test
+   Result: 21081768.00
+   Time: 654774 microseconds
+   ⚠️  DEBUG mode - slower performance
+📊 Main: Debug mode - extra logging enabled
+🔄 Loop Performance Test
+   Counter: 999999
+   Time: 50346 microseconds
+💾 Memory Access Test
+   Sum: 100000000
+   Time: 553 microseconds
+=============================
+
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+
+=== PERFORMANCE BENCHMARK ===
+📊 Build Information:
+   Mode: DEBUG
+   Optimizations: Minimal (-Og)
+   CPU Frequency: 240 MHz
+   Free Heap: 290564 bytes
+🧮 Math Performance Test
+   Result: 21081768.00
+   Time: 654765 microseconds
+   ⚠️  DEBUG mode - slower performance
+🔄 Loop Performance Test
+   Counter: 999999
+   Time: 50341 microseconds
+💾 Memory Access Test
+   Sum: 100000000
+   Time: 555 microseconds
+=============================
+
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+📊 Main: Debug mode - extra logging enabled
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+
+=== PERFORMANCE BENCHMARK ===
+📊 Build Information:
+   Mode: DEBUG
+   Optimizations: Minimal (-Og)
+   CPU Frequency: 240 MHz
+   Free Heap: 290564 bytes
+🧮 Math Performance Test
+   Result: 21081768.00
+   Time: 654760 microseconds
+   ⚠️  DEBUG mode - slower performance
+🔄 Loop Performance Test
+   Counter: 999999
+   Time: 50346 microseconds
+💾 Memory Access Test
+   Sum: 100000000
+   Time: 556 microseconds
+=============================
+
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+
+=== PERFORMANCE BENCHMARK ===
+📊 Build Information:
+   Mode: DEBUG
+   Optimizations: Minimal (-Og)
+   CPU Frequency: 240 MHz
+   Free Heap: 290564 bytes
+🧮 Math Performance Test
+   Result: 21081768.00
+   Time: 654751 microseconds
+   ⚠️  DEBUG mode - slower performance
+🔄 Loop Performance Test
+   Counter: 999999
+   Time: 50336 microseconds
+💾 Memory Access Test
+   Sum: 100000000
+   Time: 551 microseconds
+=============================
+
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+📊 Main: Debug mode - extra logging enabled
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+
+=== PERFORMANCE BENCHMARK ===
+📊 Build Information:
+   Mode: DEBUG
+   Optimizations: Minimal (-Og)
+   CPU Frequency: 240 MHz
+   Free Heap: 290564 bytes
+🧮 Math Performance Test
+   Result: 21081768.00
+   Time: 654750 microseconds
+   ⚠️  DEBUG mode - slower performance
+🔄 Loop Performance Test
+   Counter: 999999
+   Time: 50346 microseconds
+💾 Memory Access Test
+   Sum: 100000000
+   Time: 553 microseconds
+=============================
+
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+
+=== PERFORMANCE BENCHMARK ===
+📊 Build Information:
+   Mode: DEBUG
+   Optimizations: Minimal (-Og)
+   CPU Frequency: 240 MHz
+   Free Heap: 290564 bytes
+🧮 Math Performance Test
+   Result: 21081768.00
+   Time: 654770 microseconds
+   ⚠️  DEBUG mode - slower performance
+🔄 Loop Performance Test
+   Counter: 999999
+   Time: 50335 microseconds
+💾 Memory Access Test
+   Sum: 100000000
+   Time: 545 microseconds
+=============================
+
+📊 Main: Debug mode - extra logging enabled
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+🐛 Debug: This task only runs in DEBUG builds!
+🐛 Debug: Checking system health...
+🐛 Debug: All systems nominal
+
+=== PERFORMANCE BENCHMARK ===
+📊 Build Information:
+   Mode: DEBUG
+   Optimizations: Minimal (-Og)
+   CPU Frequency: 240 MHz
+   Free Heap: 290564 bytes
+🧮 Math Performance Test
+   Result: 21081768.00
+   Time: 654802 microseconds
+   ⚠️  DEBUG mode - slower performance
+🔄 Loop Performance Test
+   Counter: 999999
+   Time: 50346 microseconds
+💾 Memory Access Test
+   Sum: 100000000
+   Time: 556 microseconds
+=============================
+
