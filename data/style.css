@@ -1,0 +1,227 @@
+/* ESP32 LED Controller Styles */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background: #f0f0f0;
+    color: #333;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h3 {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Form Styling */
+.form-group {
+    margin: 20px 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="number"],
+input[type="color"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+input[type="number"]:focus,
+input[type="color"]:focus,
+select:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+/* Color Input Groups */
+.color-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.color-input {
+    flex: 1;
+}
+
+/* Button Styling */
+button {
+    background: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+.toggle-btn {
+    background: #2196F3;
+}
+
+.toggle-btn:hover {
+    background: #1976D2;
+}
+
+/* Status Messages */
+.status {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Color Previews */
+.preview {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 10px;
+    background: #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+.preview:hover {
+    transform: scale(1.1);
+}
+
+/* Configuration Display */
+.current-config {
+    background: #e9ecef;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0;
+    border-left: 4px solid #4CAF50;
+}
+
+.current-config p {
+    margin: 5px 0;
+}
+
+/* Test Section */
+.test-section {
+    background: #fff3cd;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0;
+    border: 1px solid #ffeaa7;
+    border-left: 4px solid #ffc107;
+}
+
+.test-section p {
+    margin: 10px 0;
+    color: #856404;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    body {
+        margin: 20px;
+    }
+    
+    .container {
+        padding: 20px;
+    }
+    
+    .color-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .preview {
+        margin-left: 0;
+        margin-top: 10px;
+        align-self: center;
+    }
+    
+    button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+/* Loading Animation */
+.loading {
+    color: #666;
+    font-style: italic;
+}
+
+.loading::after {
+    content: "...";
+    animation: dots 1.5s steps(5, end) infinite;
+}
+
+@keyframes dots {
+    0%, 20% {
+        color: rgba(0, 0, 0, 0);
+        text-shadow:
+            .25em 0 0 rgba(0, 0, 0, 0),
+            .5em 0 0 rgba(0, 0, 0, 0);
+    }
+    40% {
+        color: #666;
+        text-shadow:
+            .25em 0 0 rgba(0, 0, 0, 0),
+            .5em 0 0 rgba(0, 0, 0, 0);
+    }
+    60% {
+        text-shadow:
+            .25em 0 0 #666,
+            .5em 0 0 rgba(0, 0, 0, 0);
+    }
+    80%, 100% {
+        text-shadow:
+            .25em 0 0 #666,
+            .5em 0 0 #666;
+    }
+}

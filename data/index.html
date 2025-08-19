@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ESP32 LED Controller</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ESP32 LED Controller</h1>
+        
+        <div class="current-config">
+            <h3>Current Configuration:</h3>
+            <p><strong>Delay:</strong> <span id="currentDelay">Loading...</span> ms</p>
+            <p><strong>Color Order:</strong> <span id="currentColorOrder">Loading...</span></p>
+            <p><strong>Status:</strong> <span id="currentStatus">Loading...</span></p>
+            <p><strong>Colors:</strong> 
+                <span class="preview" id="preview1"></span>
+                <span class="preview" id="preview2"></span>
+                <span class="preview" id="preview3"></span>
+            </p>
+        </div>
+
+        <div class="test-section">
+            <h3>Color Order Test</h3>
+            <p>If colors appear wrong, try different color orders until they match your color picker.</p>
+            <button type="button" onclick="testRed()">Test Red</button>
+            <button type="button" onclick="testGreen()">Test Green</button>
+            <button type="button" onclick="testBlue()">Test Blue</button>
+        </div>
+
+        <div id="status"></div>
+
+        <form onsubmit="updateConfig(event)">
+            <div class="form-group">
+                <label for="colorOrder">LED Color Order:</label>
+                <select id="colorOrder">
+                    <option value="0">RGB (Red-Green-Blue)</option>
+                    <option value="1">GRB (Green-Red-Blue)</option>
+                    <option value="2">BRG (Blue-Red-Green)</option>
+                    <option value="3">BGR (Blue-Green-Red)</option>
+                    <option value="4">RBG (Red-Blue-Green)</option>
+                    <option value="5">GBR (Green-Blue-Red)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="delay">Color Change Delay (milliseconds):</label>
+                <input type="number" id="delay" min="100" max="10000" value="1000">
+            </div>
+
+            <div class="form-group">
+                <label>Color 1:</label>
+                <div class="color-group">
+                    <input type="color" id="color1" value="#ff0000" class="color-input">
+                    <span class="preview" id="color1-preview"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Color 2:</label>
+                <div class="color-group">
+                    <input type="color" id="color2" value="#00ff00" class="color-input">
+                    <span class="preview" id="color2-preview"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Color 3:</label>
+                <div class="color-group">
+                    <input type="color" id="color3" value="#0000ff" class="color-input">
+                    <span class="preview" id="color3-preview"></span>
+                </div>
+            </div>
+
+            <button type="submit">Save Configuration</button>
+            <button type="button" onclick="toggleLED()" class="toggle-btn">Toggle LED</button>
+            <button type="button" onclick="loadCurrentConfig()">Refresh</button>
+        </form>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>
