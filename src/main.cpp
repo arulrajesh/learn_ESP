@@ -6,90 +6,64 @@
 
 Adafruit_NeoPixel pixels(NUM_PIXELS, RGB_LED_PIN, NEO_GRB + NEO_KHZ800);
 
-// Global variables for inter-task communication
-volatile int counter = 0;
-volatile bool ledState = false;
+// Task handle - like a "phone number" to reach the LED task
+TaskHandle_t LEDTaskHandle = NULL;
 
-// Task handles (references to our tasks)
-TaskHandle_t Task1Handle = NULL;
-TaskHandle_t Task2Handle = NULL;
-
-// Task 1: Runs on Core 0 - Controls RGB LED
-void Task1_LEDController(void *pvParameters) {
-    Serial.print("Task1_LEDController running on core ");
-    Serial.println(xPortGetCoreID());
+// === TASK 1: LED WORKER (Waits for orders) ===
+void LEDWorkerTask(void *pvParameters) {
+    Serial.println("🔴 LED Worker: I'm ready and waiting for orders...");
     
-    int colorIndex = 0;
     uint32_t colors[] = {
         pixels.Color(255, 0, 0),    // Red
         pixels.Color(0, 255, 0),    // Green
         pixels.Color(0, 0, 255),    // Blue
-        pixels.Color(255, 255, 0),  // Yellow
-        pixels.Color(255, 0, 255),  // Purple
-        pixels.Color(0, 255, 255)   // Cyan
     };
-    
-    for(;;) { // Infinite loop (equivalent to while(1))
-        // Change LED color
-        pixels.setPixelColor(0, colors[colorIndex]);
-        pixels.show();
-        
-        Serial.print("[Core 0] LED Color: ");
-        Serial.print(colorIndex);
-        Serial.print(", Counter: ");
-        Serial.println(counter);
-        
-        colorIndex = (colorIndex + 1) % 6; // Cycle through colors
-        
-        vTaskDelay(1000 / portTICK_PERIOD_MS); // Wait 1000ms
-    }
-}
-
-// Task 2: Runs on Core 1 - Math calculations and counter
-void Task2_Calculator(void *pvParameters) {
-    Serial.print("Task2_Calculator running on core ");
-    Serial.println(xPortGetCoreID());
+    int colorIndex = 0;
     
     for(;;) {
-        // Simulate heavy calculation work
-        float result = 0;
-        for(int i = 0; i < 100000; i++) {
-            result += sin(i * 0.001) * cos(i * 0.001);
+        Serial.println("🔴 LED Worker: Sleeping... waiting for notification...");
+        
+        // WAIT for someone to "tap me on the shoulder"
+        uint32_t notificationValue;
+        if(xTaskNotifyWait(0, 0, &notificationValue, portMAX_DELAY)) {
+            
+            Serial.print("🔴 LED Worker: Got notification! Value = ");
+            Serial.println(notificationValue);
+            
+            // Change LED color
+            pixels.setPixelColor(0, colors[colorIndex]);
+            pixels.show();
+            
+            Serial.print("🔴 LED Worker: Changed LED to color ");
+            Serial.println(colorIndex);
+            
+            colorIndex = (colorIndex + 1) % 3; // Cycle: 0, 1, 2, 0, 1, 2...
         }
-        
-        // Update global counter (this happens every ~200ms)
-        counter++;
-        
-        Serial.print("[Core 1] Calculation done. Result: ");
-        Serial.print(result, 2);
-        Serial.print(", Counter: ");
-        Serial.println(counter);
-        
-        vTaskDelay(200 / portTICK_PERIOD_MS); // Wait 200ms
     }
 }
 
-// Task 3: Runs on Core 1 - Serial monitor
-void Task3_SerialMonitor(void *pvParameters) {
-    Serial.print("Task3_SerialMonitor running on core ");
-    Serial.println(xPortGetCoreID());
+// === TASK 2: BUTTON SIMULATOR (Sends orders) ===
+void ButtonTask(void *pvParameters) {
+    Serial.println("🔵 Button Task: I will send orders every 2 seconds");
+    
+    int buttonPressCount = 0;
     
     for(;;) {
-        Serial.println("=== SYSTEM STATUS ===");
-        Serial.print("Free heap memory: ");
-        Serial.print(ESP.getFreeHeap());
-        Serial.println(" bytes");
+        delay(2000); // Wait 2 seconds
         
-        Serial.print("Uptime: ");
-        Serial.print(millis() / 1000);
-        Serial.println(" seconds");
+        buttonPressCount++;
+        Serial.print("🔵 Button Task: Button pressed #");
+        Serial.print(buttonPressCount);
+        Serial.println(" - Sending notification to LED Worker!");
         
-        Serial.print("Tasks running on Core 0: ");
-        Serial.println(uxTaskGetNumberOfTasks() - 2); // Approximate
+        // "TAP THE LED WORKER ON THE SHOULDER"
+        xTaskNotify(
+            LEDTaskHandle,      // WHO to notify (the LED worker)
+            buttonPressCount,   // WHAT to send (just the press count)
+            eSetValueWithOverwrite  // HOW to send it
+        );
         
-        Serial.println("========================");
-        
-        vTaskDelay(3000 / portTICK_PERIOD_MS); // Wait 3 seconds
+        Serial.println("🔵 Button Task: Notification sent! Going back to sleep...");
     }
 }
 
@@ -97,60 +71,44 @@ void setup() {
     Serial.begin(115200);
     delay(2000);
     
-    // Initialize NeoPixel
     pixels.begin();
     pixels.clear();
     pixels.show();
     
-    Serial.println("=== ESP32 Dual Core FreeRTOS Demo ===");
-    Serial.print("Setup running on core: ");
-    Serial.println(xPortGetCoreID());
+    Serial.println("=== SIMPLE TASK NOTIFICATION DEMO ===");
+    Serial.println("Think of this like a restaurant:");
+    Serial.println("- LED Worker = Cook (waits for orders)");
+    Serial.println("- Button Task = Waiter (brings orders)");
+    Serial.println("=====================================");
     
-    // Create Task 1 - LED Controller on Core 0
+    // Create the LED Worker (the "cook")
     xTaskCreatePinnedToCore(
-        Task1_LEDController,    // Function to run
-        "LEDController",        // Task name (for debugging)
-        10000,                  // Stack size (bytes)
-        NULL,                   // Parameters to pass to function
-        1,                      // Task priority (0-25, higher = more priority)
-        &Task1Handle,           // Task handle
-        0                       // Core ID (0 or 1)
+        LEDWorkerTask,
+        "LEDWorker",
+        10000,
+        NULL,
+        1,
+        &LEDTaskHandle,    // SAVE this handle - it's like the cook's "phone number"
+        0                  // Core 0
     );
     
-    // Create Task 2 - Calculator on Core 1  
+    // Create the Button Task (the "waiter")
     xTaskCreatePinnedToCore(
-        Task2_Calculator,       // Function to run
-        "Calculator",           // Task name
-        10000,                  // Stack size
-        NULL,                   // Parameters
-        2,                      // Priority (higher than Task1)
-        &Task2Handle,           // Task handle  
-        1                       // Core ID (Core 1)
+        ButtonTask,
+        "ButtonTask", 
+        10000,
+        NULL,
+        1,
+        NULL,
+        1                  // Core 1
     );
     
-    // Create Task 3 - Serial Monitor on Core 1
-    xTaskCreatePinnedToCore(
-        Task3_SerialMonitor,    // Function to run
-        "SerialMonitor",        // Task name
-        10000,                  // Stack size
-        NULL,                   // Parameters
-        1,                      // Priority (same as Task1)
-        NULL,                   // We don't need the handle
-        1                       // Core ID (Core 1)
-    );
-    
-    Serial.println("All tasks created successfully!");
-    Serial.println("Task1 (LED) -> Core 0, Priority 1");
-    Serial.println("Task2 (Calculator) -> Core 1, Priority 2");  
-    Serial.println("Task3 (Monitor) -> Core 1, Priority 1");
+    Serial.println("✅ Both tasks created!");
+    Serial.println("Watch the communication between them...");
 }
 
 void loop() {
-    // The main loop() function is actually another task!
-    // It runs on Core 1 by default with priority 1
-    
-    Serial.print("[Main Loop] Running on core: ");
-    Serial.println(xPortGetCoreID());
-    
-    delay(5000); // Print this every 5 seconds
+    // Nothing to do here - tasks handle everything!
+    delay(10000);
+    Serial.println("📊 Main: Tasks are running independently...");
 }
