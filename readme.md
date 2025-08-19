@@ -191,27 +191,6 @@ pio run -e release --target upload
 - **Easy Testing**: Individual components can be tested
 - **Web Development**: Standard HTML/CSS/JS workflow
 
-### ESP32 Flash Memory Layout:
-┌─────────────────┐
-│   Bootloader    │ ← System partition
-├─────────────────┤
-│   Partition     │ ← System partition  
-│   Table         │
-├─────────────────┤
-│   NVS           │ ← YOUR PREFERENCES STORED HERE
-│   (Non-Volatile │   (Survives firmware updates!)
-│    Storage)     │
-├─────────────────┤
-│   Application   │ ← Your firmware code
-│   (Firmware)    │   (Gets overwritten during upload)
-├─────────────────┤
-│   SPIFFS        │ ← Web files (HTML/CSS/JS)
-│   File System   │   (Gets overwritten with uploadfs)
-└─────────────────┘
-
-To erase settings run 
-pio run --target erase           # ❌ Settings erased
-
 ## License
 
 Open source - modify and use as needed!
